@@ -12,8 +12,8 @@ console.log(reverseString('Hi there!!!'));
 function question() {
   var number;
   do {
-    number = prompt('Enter the number more then 100', 0);
-  } while (number && number < 100) {
+    number = +prompt('Enter the number more then 100', 0);
+  } while (!number || number < 100 || (!(number === parseInt(number)))) {
     alert('You entered number '+ number);
   }
 }
@@ -22,7 +22,7 @@ function getSimpleNumbers() {
   number:
   for (var i = 2; i <=10; i++) {
     for (var j = 2; j < i; j++) {
-      if (i % j == false)
+      if (i % j === 0)
       continue number;
     }
     console.log(i);
@@ -31,11 +31,11 @@ function getSimpleNumbers() {
 
 function fizzBuzzNumbers() {
   for (var i = 1; i <= 100; i++) {
-    if (i % 3 == false && i % 5 == false) {
+    if (i % 3 === false && i % 5 === false) {
       console.log('FizzBuzz');
-    } else if (i % 5 == false) {
+    } else if (i % 5 === false) {
       console.log('Buzz');
-    } else if (i % 3 == false) {
+    } else if (i % 3 === false) {
       console.log('Fizz');
     } else {
       console.log(i);
@@ -47,7 +47,7 @@ function getLetterCounts(text) {
   var count = text.length;
   var result = 0;
   for (var i = 0; i < count; i++) {
-    if (text.charAt(i) == '') {
+    if (text.charAt(i) === '') {
       result++;
     }
     result++;

@@ -1,7 +1,7 @@
 question();
 getSimpleNumbers();
 fizzBuzzNumbers();
-console.log(getLetterCounts('Hello man! how are you'));
+getLetterFromString("sSSspyder", "s");
 console.log(getRandomInteger(0.1, 2));
 console.log(getFibonaccy(3)); 
 console.log(getFibonaccy(7)); 
@@ -13,7 +13,7 @@ function question() {
   var number;
   do {
     number = +prompt('Enter the number more then 100', 0);
-  } while (!number || number < 100 || (!(number === parseInt(number)))) 
+  } while (!number || number < 100 || (!(number === parseInt(number)))); 
     alert('You entered number '+ number);
 }
 
@@ -48,7 +48,7 @@ function getLetterCounts(text) {
     let char = text[i].toLowerCase();
     if (char >= 'a' && char <= 'z') {
       if (chars[char])
-        ++chars[char]
+        ++chars[char];
       else
         chars[char] = 1;
     }
@@ -56,10 +56,20 @@ function getLetterCounts(text) {
   return chars;
 }
 
+function getLetterFromString(yourString, yourChar) {
+  yourString = yourString.toLowerCase();
+  yourSymbol = yourChar.toLowerCase();
+  var result = 0;
+  for (var i = 0; i <= yourString.length; i++) {
+    if (yourString[i] === yourChar) {
+      result++;
+    } 
+  }
+  console.log(result);
+}
+
 function getRandomInteger(min, max) {
-  var randomNumber = min - 0.1 + Math.random() * (max - min + 1);
-  randomNumber = Math.round(randomNumber);
-  return randomNumber;
+  return Math.round(Math.random() * (max - min)) + min;
 }
 
 //Рекурсия

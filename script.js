@@ -2,7 +2,7 @@ question();
 getSimpleNumbers();
 fizzBuzzNumbers();
 getLetterFromString("sSSspyder", "s");
-console.log(getRandomInteger(0.1, 2));
+console.log(getRandomInteger(1, 2));
 console.log(getFibonaccy(3)); 
 console.log(getFibonaccy(7)); 
 console.log(getFibonaccyLoop(3)); 
@@ -14,7 +14,7 @@ function question() {
   do {
     number = +prompt('Enter the number more then 100', 0);
   } while (!number || number < 100 || (!(number === parseInt(number)))); 
-    alert('You entered number '+ number);
+    alert('You entered number ' + number);
 }
 
 function getSimpleNumbers() {
